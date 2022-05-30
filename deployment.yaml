@@ -14,9 +14,17 @@ spec:
       labels:
         app: udagram-frontend
     spec:
+      restartPolicy: Always
       containers:
       - name: udagram-frontend
         image: caboose0013/udagram-frontend:v2
         ports:
         - containerPort: 80
         imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "1024Mi"
+            cpu: "500m"
